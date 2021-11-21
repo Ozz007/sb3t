@@ -20,7 +20,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public int createCustomer(List<CustomerModel> customers) {
-        customerRepository.saveAll(MAPPER.toEntities(customers));
         return ((List<Customer>) customerRepository.saveAll(MAPPER.toEntities(customers)))
                 .size();
     }
