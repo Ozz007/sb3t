@@ -1,6 +1,5 @@
 package com.app.sb3t.ws.it.stepdef;
 
-import com.app.sb3t.ws.it.ApplicationIT;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.http.HttpStatus;
@@ -9,7 +8,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 
-public class CustomerStepDef extends ApplicationIT {
+public class CustomerStepDef extends com.app.sb3t.ws.it.ApplicationIT {
 
     @When("^the client calls /customers$")
     public void the_client_calls_orders() throws Throwable {

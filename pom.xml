@@ -31,12 +31,13 @@
 
     <!-- Maven plugins dependencies -->
     <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
-    <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+    <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
 
     <!-- App dependencies -->
     <spring-boot.version>2.5.4</spring-boot.version>
     <lombok.version>1.18.20</lombok.version>
-    <lombok-mapstruct-binding>0.2.0</lombok-mapstruct-binding>
+    <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
     <mapstruct.version>1.4.2.Final</mapstruct.version>
     <liquibase.version>4.4.3</liquibase.version>
     <commons-lang3.version>3.12.0</commons-lang3.version>
@@ -44,8 +45,9 @@
 
     <!-- Test dependencies -->
     <junit-jupiter.version>5.7.2</junit-jupiter.version>
-    <cucumber-java.version>6.11.0</cucumber-java.version>
+    <cucumber.version>6.11.0</cucumber.version>
     <assertj.version>3.20.2</assertj.version>
+    <hamcrest.version>2.2</hamcrest.version>
     <h2.version>1.4.200</h2.version>
   </properties>
 
@@ -74,10 +76,12 @@
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${maven-compiler-plugin.version}</version>
         </plugin>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${maven-surefire-plugin.version}</version>
         </plugin>
@@ -87,7 +91,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M5</version>
+        <version>${maven-surefire-plugin.version}</version>
         <configuration>
           <skipTests>${unit-tests.skip}</skipTests>
           <excludes>

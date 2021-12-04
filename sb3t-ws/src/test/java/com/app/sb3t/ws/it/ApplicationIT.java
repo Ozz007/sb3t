@@ -1,6 +1,7 @@
 package com.app.sb3t.ws.it;
 
 import com.app.sb3t.ws.Application;
+import com.app.sb3t.ws.config.AppWsConfig;
 import com.app.sb3t.ws.it.utils.HeaderSettingRequestCallback;
 import com.app.sb3t.ws.it.utils.ResponseResultErrorHandler;
 import com.app.sb3t.ws.it.utils.ResponseResults;
@@ -10,6 +11,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootContextLoader;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpMethod;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.web.client.RestTemplate;
@@ -24,9 +28,7 @@ import java.util.Map;
 public class ApplicationIT {
     protected static ResponseResults latestResponse = null;
 
-    @Autowired
-    protected RestTemplate restTemplate;
-
+    protected RestTemplate restTemplate = new RestTemplate();
 
     /**
      * REST GET query
